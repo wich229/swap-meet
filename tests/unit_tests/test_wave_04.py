@@ -4,15 +4,15 @@ from swap_meet.item import Item
 
 @pytest.mark.skip
 def test_swap_first_item_returns_true():
-    item_a = Item(category="clothing")
-    item_b = Item(category="clothing")
-    item_c = Item(category="clothing")
+    item_a = Item()
+    item_b = Item()
+    item_c = Item()
     fatimah = Vendor(
         inventory=[item_a, item_b, item_c]
     )
 
-    item_d = Item(category="electronics")
-    item_e = Item(category="decor")
+    item_d = Item()
+    item_e = Item()
     jolie = Vendor(
         inventory=[item_d, item_e]
     )
@@ -36,8 +36,8 @@ def test_swap_first_item_from_my_empty_returns_false():
         inventory=[]
     )
 
-    item_d = Item(category="electronics")
-    item_e = Item(category="decor")
+    item_d = Item()
+    item_e = Item()
     jolie = Vendor(
         inventory=[item_d, item_e]
     )
@@ -50,9 +50,9 @@ def test_swap_first_item_from_my_empty_returns_false():
 
 @pytest.mark.skip
 def test_swap_first_item_from_their_empty_returns_false():
-    item_a = Item(category="clothing")
-    item_b = Item(category="clothing")
-    item_c = Item(category="clothing")
+    item_a = Item()
+    item_b = Item()
+    item_c = Item()
     fatimah = Vendor(
         inventory=[item_a, item_b, item_c]
     )

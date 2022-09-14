@@ -41,7 +41,7 @@ def test_removing_from_inventory_returns_item():
     assert result == item
 
 @pytest.mark.skip
-def test_removing_not_found_is_false():
+def test_removing_not_found_returns_none():
     item = "item to remove"
     vendor = Vendor(
         inventory=["a", "b", "c"]
