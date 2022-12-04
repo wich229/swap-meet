@@ -1,19 +1,21 @@
 import uuid
 
-class Item:
-    # composite class to component vendor
-    # attr: id = UUID_int, item
-    # methods: get_by_id, get_category(from vendor)
 
-    def __init__(self, id = 0):
-        if not id:
+class Item:
+
+    def __init__(self, id = None):
+        if id is None:
             self.id = uuid.uuid4().int
         else:
             self.id = id
     
-
     def get_category(self):
         return str(self.__class__.__name__)
+    
+    def __str__(self):
+        return f"An object of type {self.get_category()} with id {self.id}"
+
+
 
 
 
