@@ -101,8 +101,6 @@ class Vendor:
     def swap_by_id(self, other_vendor, my_item_id, their_item_id):
         my_id_item = self.get_by_id(my_item_id)
         other_id_item = other_vendor.get_by_id(their_item_id)
-        
-        print(f"\n\nmy_id_item and other_id_item: {my_id_item} {other_id_item}\n\n")
 
         if my_id_item == None or other_id_item == None:
             return False
