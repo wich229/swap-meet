@@ -25,8 +25,7 @@ class Item:
             5 : "brand new"
         }
         return level_explained[int(self.condition)]
-
-        #  "A" if score > 90 else "B" if score >= 80 else "C"
+    
 
     def __str__(self):
         return f"An object of type {self.get_category()} with id {self.id}"
