@@ -123,3 +123,6 @@ class Vendor:
         
         result = self.swap_by_id(other_vendor, self_id, other_id)
         return result
+
+    # working on Optional Enhancements in new branch and doesn't finish
+    # will submit it later. Thank you!
