@@ -30,6 +30,7 @@ def test_swap_clothing_items_by_fabric():
     assert item_d in tai.inventory
     assert item_a in jesse.inventory
     
+    
 def test_swap_electronics_items_by_type():
     # Arrange
     item_a = Electronics(id=456, type="phone")
@@ -64,6 +65,7 @@ def test_correct_space_for_decor_product():
 
     # Assert
     assert result == 25.00
+
 
 def test_swap_electronics_items_by_type():
     # Arrange
