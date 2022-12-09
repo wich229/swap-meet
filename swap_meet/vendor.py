@@ -124,5 +124,29 @@ class Vendor:
         result = self.swap_by_id(other_vendor, self_id, other_id)
         return result
 
-    # working on Optional Enhancements in new branch and doesn't finish
-    # will submit it later. Thank you!
+
+    # Optional Enhancements
+    # I noticed here are some duplicates in these three functions
+    # but I didn't figure out how to enhance them I will update that later.
+    
+    def swap_clothing_items_by_fabric(self, other_vendor, my_item, their_item):
+        if my_item.get_category() == their_item.get_category():
+            if my_item.fabric == their_item.fabric:
+                return self.swap_items(other_vendor, my_item, their_item)
+        
+            return False
+    
+    def swap_electronics_items_by_type(self, other_vendor, my_item, their_item):
+        if my_item.get_category() == their_item.get_category():
+            if my_item.type == their_item.type:
+                return self.swap_items(other_vendor, my_item, their_item)
+
+        return False
+    
+    def swap_decor_items_by_space(self, other_vendor, my_item, their_item):
+        if my_item.get_category() == their_item.get_category():
+            if my_item.get_space() == their_item.get_space():
+                return self.swap_items(other_vendor, my_item, their_item)
+
+        return False
+        
