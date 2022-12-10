@@ -21,7 +21,7 @@ def test_swap_clothing_items_by_fabric():
     )
 
     # Act
-    result = tai.swap_clothing_items_by_fabric(jesse, item_a, item_d)
+    result = tai.swap_simliar_items(jesse, item_a, item_d)
 
     # Assert
     assert result == True
@@ -46,7 +46,7 @@ def test_swap_electronics_items_by_type():
     )
 
     # Act
-    result = tai.swap_electronics_items_by_type(jesse, item_a, item_d)
+    result = tai.swap_simliar_items(jesse, item_a, item_d)
 
     # Assert
     assert result == False
@@ -80,7 +80,7 @@ def test_swap_electronics_items_by_type():
     )
 
     # Act
-    result = tai.swap_decor_items_by_space(jesse, item_b, item_e)
+    result = tai.swap_simliar_items(jesse, item_b, item_e)
 
     # Assert
     assert result == True

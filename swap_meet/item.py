@@ -12,7 +12,7 @@ class Item:
     
 
     def get_category(self):
-        return str(self.__class__.__name__)
+        return self.__class__.__name__
 
 
     def condition_description(self):
@@ -29,6 +29,4 @@ class Item:
 
     def __str__(self):
         return f"An object of type {self.get_category()} with id {self.id}"
-
-
-
+   

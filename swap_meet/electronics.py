@@ -5,6 +5,10 @@ class Electronics(Item):
         super().__init__(id, condition)
         self.type = type
     
+    
+  # for option # new solution
+    def compare_attrs(self, other_item):
+        return self.type == other_item.type
 
     def __str__(self):
         return f"{super().__str__()}. This is a {self.type} device."

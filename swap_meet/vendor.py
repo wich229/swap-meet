@@ -32,6 +32,8 @@ class Vendor:
         if my_item not in self.inventory or their_item not in other_vendor.inventory:
             return False
 
+        # can shorcut as : self.add(self.remove(my_item))
+        # can shorcut as : other_vendor.add(other_vendor.remove(their_item))
         self.remove(my_item)
         other_vendor.remove(their_item)
         self.add(their_item)
@@ -129,24 +131,33 @@ class Vendor:
     # I noticed here are some duplicates in these three functions
     # but I didn't figure out how to enhance them I will update that later.
     
-    def swap_clothing_items_by_fabric(self, other_vendor, my_item, their_item):
+    # new solution ----------------------------------------------------------
+    
+    def swap_simliar_items(self, other_vendor, my_item, their_item):
         if my_item.get_category() == their_item.get_category():
-            if my_item.fabric == their_item.fabric:
+            if my_item.compare_attrs(their_item):
                 return self.swap_items(other_vendor, my_item, their_item)
+
+    # old solution ----------------------------------------------------------
+    
+    # def swap_clothing_items_by_fabric(self, other_vendor, my_item, their_item):
+    #     if my_item.get_category() == their_item.get_category():
+    #         if my_item.fabric == their_item.fabric:
+    #             return self.swap_items(other_vendor, my_item, their_item)
         
-            return False
+    #         return False
     
-    def swap_electronics_items_by_type(self, other_vendor, my_item, their_item):
-        if my_item.get_category() == their_item.get_category():
-            if my_item.type == their_item.type:
-                return self.swap_items(other_vendor, my_item, their_item)
+    # def swap_electronics_items_by_type(self, other_vendor, my_item, their_item):
+    #     if my_item.get_category() == their_item.get_category():
+    #         if my_item.type == their_item.type:
+    #             return self.swap_items(other_vendor, my_item, their_item)
 
-        return False
+    #     return False
     
-    def swap_decor_items_by_space(self, other_vendor, my_item, their_item):
-        if my_item.get_category() == their_item.get_category():
-            if my_item.get_space() == their_item.get_space():
-                return self.swap_items(other_vendor, my_item, their_item)
+    # def swap_decor_items_by_space(self, other_vendor, my_item, their_item):
+    #     if my_item.get_category() == their_item.get_category():
+    #         if my_item.get_space() == their_item.get_space():
+    #             return self.swap_items(other_vendor, my_item, their_item)
 
-        return False
+    #     return False
         
